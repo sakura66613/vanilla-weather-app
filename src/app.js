@@ -114,27 +114,27 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function showFahrenhuitTemperature(event) {
+function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
-  fahrenhuitLink.classList.add("active");
-  let fahrenhuitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenhuitTemperature);
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.add("active");
-  fahrenhuitLink.classList.remove("active");
+  fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
-let fahrenhuitLink = document.querySelector("#fahrenhuit-link");
-fahrenhuitLink.addEventListener("click", showFahrenhuitTemperature);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
