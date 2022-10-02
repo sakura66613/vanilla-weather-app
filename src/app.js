@@ -117,11 +117,23 @@ form.addEventListener("submit", handleSubmit);
 function showFahrenhuitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let fahrenhuitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  let fahrenhuitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenhuitTemperature);
 }
 
-search("New York");
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let fahrenhuitLink = document.querySelector("#fahrenhuit-link");
 fahrenhuitLink.addEventListener("click", showFahrenhuitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+search("New York");
