@@ -117,6 +117,8 @@ form.addEventListener("submit", handleSubmit);
 function showFahrenhuitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenhuitLink.classList.add("active");
   let fahrenhuitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenhuitTemperature);
 }
@@ -124,7 +126,8 @@ function showFahrenhuitTemperature(event) {
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
+  celsiusLink.classList.add("active");
+  fahrenhuitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
